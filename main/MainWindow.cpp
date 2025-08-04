@@ -19,11 +19,19 @@ MainWindow::MainWindow(QWidget* parent)
     applyStylesheet();
     setupIconsAndTooltips();
 
-    updateButtonStates(); // Set initial button state
+    updateButtonStates();
     statusBar()->showMessage("Ready. Press Live Stream to begin.");
 }
 
 void MainWindow::setupIconsAndTooltips() {
+    // Set icons to be larger and more prominent
+    const QSize iconSize(24, 24);
+    ui->playButton->setIconSize(iconSize);
+    ui->pauseButton->setIconSize(iconSize);
+    ui->resumeButton->setIconSize(iconSize);
+    ui->rewindButton->setIconSize(iconSize);
+    ui->forwardButton->setIconSize(iconSize);
+
     ui->playButton->setIcon(this->style()->standardIcon(QStyle::SP_MediaPlay));
     ui->pauseButton->setIcon(this->style()->standardIcon(QStyle::SP_MediaPause));
     ui->resumeButton->setIcon(this->style()->standardIcon(QStyle::SP_MediaPlay));
@@ -35,47 +43,110 @@ void MainWindow::setupIconsAndTooltips() {
     ui->resumeButton->setToolTip("Resume buffered playback");
     ui->rewindButton->setToolTip("Skip back 1 second in buffer");
     ui->forwardButton->setToolTip("Skip forward 1 second in buffer");
-    ui->timelineSlider->setToolTip("Timeline for buffered video (active when paused)");
-    ui->resolutionComboBox->setToolTip("Change camera resolution (restarts feed)");
 }
 
+// --- THIS IS THE NEW STYLESHEET INSPIRED BY THE WEBSITE ---
 void MainWindow::applyStylesheet() {
     QString style = R"(
-        QMainWindow { background-color: #2c3e50; }
-        QGroupBox { color: #ecf0f1; border: 1px solid #34495e; border-radius: 5px; margin-top: 1ex; }
-        QGroupBox::title { subcontrol-origin: margin; subcontrol-position: top center; padding: 0 3px; }
-        QLabel { color: #ecf0f1; font-size: 14px; }
-        QPushButton { background-color: #3498db; color: white; border: none; padding: 8px 16px; border-radius: 4px; font-size: 14px; }
-        QPushButton:hover { background-color: #2980b9; }
-        QPushButton:disabled { background-color: #566573; color: #95a5a6; }
-        QComboBox { background-color: #34495e; color: #ecf0f1; border: 1px solid #2c3e50; padding: 5px; border-radius: 3px; }
-        QComboBox::drop-down { border: none; }
-        QSlider::groove:horizontal { border: 1px solid #34495e; height: 8px; background: #34495e; margin: 2px 0; border-radius: 4px; }
-        QSlider::handle:horizontal { background: #3498db; border: 1px solid #3498db; width: 18px; margin: -5px 0; border-radius: 9px; }
-        QStatusBar { color: #ecf0f1; }
+        QMainWindow {
+            background-color: #0a192f; /* Dark Navy Blue Background */
+        }
+        QStatusBar {
+            color: #8892b0; /* Light Slate Text */
+        }
+        /* Header and Footer Frames */
+        #headerFrame, #footerFrame {
+            background-color: #112240; /* Lighter Navy */
+            border-top: 1px solid #00aaff; /* Highlight Blue Border */
+        }
+        #headerTitle {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ccd6f6; /* Lightest Slate */
+            padding: 5px;
+        }
+        #headerSubtitle, QLabel {
+            color: #8892b0; /* Light Slate Text */
+        }
+        /* Main Video Feed Label */
+        #cameraFeedLabel {
+            background-color: black;
+            color: #ccd6f6;
+            font-size: 20px;
+        }
+        /* Control Buttons */
+        QPushButton {
+            background-color: transparent;
+            color: #54f2d3; /* Mint Green/Cyan for icons */
+            border: 1px solid #54f2d3;
+            border-radius: 4px;
+            padding: 5px;
+            min-width: 40px;
+            min-height: 30px;
+        }
+        QPushButton:hover {
+            background-color: rgba(84, 242, 211, 0.1);
+        }
+        QPushButton:disabled {
+            border-color: #4a5b74;
+            color: #4a5b74;
+        }
+        /* Separator Line */
+        Line {
+            background-color: #303C55;
+        }
+        /* ComboBox for Resolution */
+        QComboBox {
+            background-color: #0a192f;
+            color: #ccd6f6;
+            border: 1px solid #303C55;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        QComboBox::drop-down {
+            border: none;
+        }
+        QComboBox QAbstractItemView {
+             background-color: #0a192f;
+             border: 1px solid #303C55;
+             selection-background-color: #303C55;
+        }
+        /* Timeline Slider */
+        QSlider::groove:horizontal {
+            border: 1px solid #303C55;
+            height: 6px;
+            background: #0a192f;
+            margin: 2px 0;
+            border-radius: 3px;
+        }
+        QSlider::handle:horizontal {
+            background: #54f2d3; /* Mint Green/Cyan */
+            border: 1px solid #54f2d3;
+            width: 16px;
+            margin: -6px 0;
+            border-radius: 8px;
+        }
     )";
     this->setStyleSheet(style);
 }
+
+// --- ALL LOGIC BELOW THIS LINE REMAINS UNCHANGED ---
 
 MainWindow::~MainWindow() {
     if (cap.isOpened()) cap.release();
     delete ui;
 }
 
-// --- MODIFIED: The button state logic is updated ---
 void MainWindow::updateButtonStates() {
     bool isLive = timer->isActive();
     bool isPlayingBack = playbackTimer->isActive();
-
     ui->playButton->setEnabled(!isLive);
-    ui->pauseButton->setEnabled(isLive || isPlayingBack); // Pause is enabled if live OR if playing back
+    ui->pauseButton->setEnabled(isLive || isPlayingBack);
     ui->resumeButton->setEnabled(isPlaybackPaused && !isPlayingBack);
-
     bool playbackControlsEnabled = isPlaybackPaused;
     ui->rewindButton->setEnabled(playbackControlsEnabled);
     ui->forwardButton->setEnabled(playbackControlsEnabled);
     ui->timelineSlider->setEnabled(playbackControlsEnabled);
-
     ui->resolutionComboBox->setEnabled(isLive);
 }
 
@@ -83,7 +154,6 @@ void MainWindow::on_playButton_clicked() {
     if (playbackTimer->isActive()) playbackTimer->stop();
     isPlaybackPaused = false;
     frameBuffer.clear();
-
     if (!cap.isOpened()) initializeCamera();
     if (cap.isOpened()) {
         on_resolutionComboBox_currentIndexChanged(ui->resolutionComboBox->currentIndex());
@@ -94,9 +164,7 @@ void MainWindow::on_playButton_clicked() {
     updateButtonStates();
 }
 
-// --- MODIFIED: on_pauseButton_clicked now handles both timers ---
 void MainWindow::on_pauseButton_clicked() {
-    // If the live feed is active, pause it
     if (timer->isActive()) {
         timer->stop();
         isPlaybackPaused = true;
@@ -107,7 +175,6 @@ void MainWindow::on_pauseButton_clicked() {
         }
         statusBar()->showMessage("Feed paused. Use timeline or resume playback.");
     }
-    // Otherwise, if the playback is active, pause it
     else if (playbackTimer->isActive()) {
         playbackTimer->stop();
         statusBar()->showMessage("Playback paused.");
@@ -117,9 +184,7 @@ void MainWindow::on_pauseButton_clicked() {
 
 void MainWindow::on_resumeButton_clicked() {
     if (isPlaybackPaused && !playbackTimer->isActive()) {
-        if (ui->timelineSlider->value() >= ui->timelineSlider->maximum()) {
-            return; // Don't start if at the end
-        }
+        if (ui->timelineSlider->value() >= ui->timelineSlider->maximum()) return;
         playbackTimer->start(1000 / frameRate);
         statusBar()->showMessage("Resuming playback...");
         updateButtonStates();

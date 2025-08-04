@@ -12,12 +12,13 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
-#include <QtWidgets/QGroupBox>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSlider>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -28,22 +29,27 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QVBoxLayout *verticalLayout;
+    QVBoxLayout *mainLayout;
+    QFrame *headerFrame;
+    QHBoxLayout *horizontalLayout;
+    QLabel *headerTitle;
+    QSpacerItem *horizontalSpacer;
+    QLabel *headerSubtitle;
     QLabel *cameraFeedLabel;
-    QHBoxLayout *horizontalLayout_4;
+    QFrame *footerFrame;
+    QVBoxLayout *verticalLayout_2;
+    QHBoxLayout *timelineLayout;
     QLabel *timelineLabel;
     QSlider *timelineSlider;
-    QHBoxLayout *horizontalLayout;
-    QGroupBox *groupBox;
-    QHBoxLayout *horizontalLayout_2;
+    QHBoxLayout *controlsLayout;
     QPushButton *playButton;
     QPushButton *pauseButton;
     QPushButton *resumeButton;
+    QFrame *separator1;
     QPushButton *rewindButton;
     QPushButton *forwardButton;
-    QGroupBox *groupBox_2;
-    QHBoxLayout *horizontalLayout_3;
-    QLabel *label;
+    QSpacerItem *horizontalSpacer_2;
+    QLabel *resolutionLabel;
     QComboBox *resolutionComboBox;
     QLabel *currentResolutionLabel;
     QStatusBar *statusbar;
@@ -52,92 +58,135 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1300, 800);
+        MainWindow->resize(1280, 800);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        verticalLayout = new QVBoxLayout(centralwidget);
-        verticalLayout->setObjectName("verticalLayout");
+        mainLayout = new QVBoxLayout(centralwidget);
+        mainLayout->setSpacing(0);
+        mainLayout->setObjectName("mainLayout");
+        mainLayout->setContentsMargins(0, 0, 0, 0);
+        headerFrame = new QFrame(centralwidget);
+        headerFrame->setObjectName("headerFrame");
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(headerFrame->sizePolicy().hasHeightForWidth());
+        headerFrame->setSizePolicy(sizePolicy);
+        horizontalLayout = new QHBoxLayout(headerFrame);
+        horizontalLayout->setObjectName("horizontalLayout");
+        headerTitle = new QLabel(headerFrame);
+        headerTitle->setObjectName("headerTitle");
+
+        horizontalLayout->addWidget(headerTitle);
+
+        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        horizontalLayout->addItem(horizontalSpacer);
+
+        headerSubtitle = new QLabel(headerFrame);
+        headerSubtitle->setObjectName("headerSubtitle");
+
+        horizontalLayout->addWidget(headerSubtitle);
+
+
+        mainLayout->addWidget(headerFrame);
+
         cameraFeedLabel = new QLabel(centralwidget);
         cameraFeedLabel->setObjectName("cameraFeedLabel");
+        QSizePolicy sizePolicy1(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(cameraFeedLabel->sizePolicy().hasHeightForWidth());
+        cameraFeedLabel->setSizePolicy(sizePolicy1);
         cameraFeedLabel->setAlignment(Qt::AlignCenter);
 
-        verticalLayout->addWidget(cameraFeedLabel);
+        mainLayout->addWidget(cameraFeedLabel);
 
-        horizontalLayout_4 = new QHBoxLayout();
-        horizontalLayout_4->setObjectName("horizontalLayout_4");
-        timelineLabel = new QLabel(centralwidget);
+        footerFrame = new QFrame(centralwidget);
+        footerFrame->setObjectName("footerFrame");
+        sizePolicy.setHeightForWidth(footerFrame->sizePolicy().hasHeightForWidth());
+        footerFrame->setSizePolicy(sizePolicy);
+        verticalLayout_2 = new QVBoxLayout(footerFrame);
+        verticalLayout_2->setObjectName("verticalLayout_2");
+        timelineLayout = new QHBoxLayout();
+        timelineLayout->setObjectName("timelineLayout");
+        timelineLabel = new QLabel(footerFrame);
         timelineLabel->setObjectName("timelineLabel");
-        timelineLabel->setMinimumSize(QSize(80, 0));
+        timelineLabel->setMinimumSize(QSize(100, 0));
+        timelineLabel->setAlignment(Qt::AlignCenter);
 
-        horizontalLayout_4->addWidget(timelineLabel);
+        timelineLayout->addWidget(timelineLabel);
 
-        timelineSlider = new QSlider(centralwidget);
+        timelineSlider = new QSlider(footerFrame);
         timelineSlider->setObjectName("timelineSlider");
         timelineSlider->setOrientation(Qt::Horizontal);
 
-        horizontalLayout_4->addWidget(timelineSlider);
+        timelineLayout->addWidget(timelineSlider);
 
 
-        verticalLayout->addLayout(horizontalLayout_4);
+        verticalLayout_2->addLayout(timelineLayout);
 
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setObjectName("horizontalLayout");
-        groupBox = new QGroupBox(centralwidget);
-        groupBox->setObjectName("groupBox");
-        horizontalLayout_2 = new QHBoxLayout(groupBox);
-        horizontalLayout_2->setObjectName("horizontalLayout_2");
-        playButton = new QPushButton(groupBox);
+        controlsLayout = new QHBoxLayout();
+        controlsLayout->setSpacing(15);
+        controlsLayout->setObjectName("controlsLayout");
+        playButton = new QPushButton(footerFrame);
         playButton->setObjectName("playButton");
 
-        horizontalLayout_2->addWidget(playButton);
+        controlsLayout->addWidget(playButton);
 
-        pauseButton = new QPushButton(groupBox);
+        pauseButton = new QPushButton(footerFrame);
         pauseButton->setObjectName("pauseButton");
 
-        horizontalLayout_2->addWidget(pauseButton);
+        controlsLayout->addWidget(pauseButton);
 
-        resumeButton = new QPushButton(groupBox);
+        resumeButton = new QPushButton(footerFrame);
         resumeButton->setObjectName("resumeButton");
 
-        horizontalLayout_2->addWidget(resumeButton);
+        controlsLayout->addWidget(resumeButton);
 
-        rewindButton = new QPushButton(groupBox);
+        separator1 = new QFrame(footerFrame);
+        separator1->setObjectName("separator1");
+        separator1->setFrameShape(QFrame::Shape::VLine);
+        separator1->setFrameShadow(QFrame::Shadow::Sunken);
+
+        controlsLayout->addWidget(separator1);
+
+        rewindButton = new QPushButton(footerFrame);
         rewindButton->setObjectName("rewindButton");
 
-        horizontalLayout_2->addWidget(rewindButton);
+        controlsLayout->addWidget(rewindButton);
 
-        forwardButton = new QPushButton(groupBox);
+        forwardButton = new QPushButton(footerFrame);
         forwardButton->setObjectName("forwardButton");
 
-        horizontalLayout_2->addWidget(forwardButton);
+        controlsLayout->addWidget(forwardButton);
 
+        horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
-        horizontalLayout->addWidget(groupBox);
+        controlsLayout->addItem(horizontalSpacer_2);
 
-        groupBox_2 = new QGroupBox(centralwidget);
-        groupBox_2->setObjectName("groupBox_2");
-        horizontalLayout_3 = new QHBoxLayout(groupBox_2);
-        horizontalLayout_3->setObjectName("horizontalLayout_3");
-        label = new QLabel(groupBox_2);
-        label->setObjectName("label");
+        resolutionLabel = new QLabel(footerFrame);
+        resolutionLabel->setObjectName("resolutionLabel");
 
-        horizontalLayout_3->addWidget(label);
+        controlsLayout->addWidget(resolutionLabel);
 
-        resolutionComboBox = new QComboBox(groupBox_2);
+        resolutionComboBox = new QComboBox(footerFrame);
         resolutionComboBox->setObjectName("resolutionComboBox");
+        resolutionComboBox->setMinimumSize(QSize(120, 0));
 
-        horizontalLayout_3->addWidget(resolutionComboBox);
+        controlsLayout->addWidget(resolutionComboBox);
 
-        currentResolutionLabel = new QLabel(groupBox_2);
+        currentResolutionLabel = new QLabel(footerFrame);
         currentResolutionLabel->setObjectName("currentResolutionLabel");
+        currentResolutionLabel->setMinimumSize(QSize(120, 0));
 
-        horizontalLayout_3->addWidget(currentResolutionLabel);
-
-
-        horizontalLayout->addWidget(groupBox_2);
+        controlsLayout->addWidget(currentResolutionLabel);
 
 
-        verticalLayout->addLayout(horizontalLayout);
+        verticalLayout_2->addLayout(controlsLayout);
+
+
+        mainLayout->addWidget(footerFrame);
 
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
@@ -151,17 +200,12 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Camera Feed App", nullptr));
-        cameraFeedLabel->setText(QCoreApplication::translate("MainWindow", "Camera is off. Press Live Stream to start.", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "VIR Innovations - VisionApp", nullptr));
+        headerTitle->setText(QCoreApplication::translate("MainWindow", "VisionApp Control Center", nullptr));
+        headerSubtitle->setText(QCoreApplication::translate("MainWindow", "Powered by VIR Innovations", nullptr));
+        cameraFeedLabel->setText(QCoreApplication::translate("MainWindow", "Press Live Stream to Begin", nullptr));
         timelineLabel->setText(QCoreApplication::translate("MainWindow", "Time: --", nullptr));
-        groupBox->setTitle(QCoreApplication::translate("MainWindow", "Playback Controls", nullptr));
-        playButton->setText(QCoreApplication::translate("MainWindow", "Live Stream", nullptr));
-        pauseButton->setText(QCoreApplication::translate("MainWindow", "Pause", nullptr));
-        resumeButton->setText(QCoreApplication::translate("MainWindow", "Resume", nullptr));
-        rewindButton->setText(QCoreApplication::translate("MainWindow", "Rewind", nullptr));
-        forwardButton->setText(QCoreApplication::translate("MainWindow", "Forward", nullptr));
-        groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "Camera Settings", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Resolution:", nullptr));
+        resolutionLabel->setText(QCoreApplication::translate("MainWindow", "Resolution:", nullptr));
         currentResolutionLabel->setText(QCoreApplication::translate("MainWindow", "Current: N/A", nullptr));
     } // retranslateUi
 
