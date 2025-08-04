@@ -1,0 +1,4 @@
+D:/dev/CameraApp/build/CMakeFiles/CameraApp.dir
+D:/dev/CameraApp/build/CMakeFiles/INSTALL.dir
+D:/dev/CameraApp/build/CMakeFiles/ALL_BUILD.dir
+D:/dev/CameraApp/build/CMakeFiles/ZERO_CHECK.dir

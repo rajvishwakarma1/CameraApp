@@ -1,0 +1,22 @@
+^D:\DEV\CAMERAAPP\BUILD\CMAKEFILES\F4E17CA3FE4009F4EFC66FEC96132936\AUTOUIC_(CONFIG).STAMP.RULE
+setlocal
+cd D:\dev\CameraApp\build
+if %errorlevel% neq 0 goto :cmEnd
+D:
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^D:\DEV\CAMERAAPP\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/dev/CameraApp -BD:/dev/CameraApp/build --check-stamp-file D:/dev/CameraApp/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
