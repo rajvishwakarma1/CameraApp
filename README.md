@@ -13,32 +13,33 @@ A live demo of the application can be viewed on YouTube.
 
 ## Features
 
-This application includes a wide range of features to meet the project requirements:
+This application includes a wide range of features to meet and exceed the project requirements:
 
-* [cite_start]**Live Camera Feed:** Displays a real-time video stream from the default system camera in a resizable window[cite: 15].
+* **Live Camera Feed:** Displays a real-time video stream from the default system camera in a resizable window.
 * **Buffered Playback:** The application continuously stores the last ~10 seconds of the live feed in a memory buffer.
-* [cite_start]**Advanced Playback Controls**[cite: 17]:
-    * [cite_start]**Live Stream:** Start the live camera feed or return to it from playback mode[cite: 18].
-    * [cite_start]**Pause:** Pause the live feed to enter playback mode, or pause the buffered playback itself[cite: 19].
-    * [cite_start]**Resume:** A dedicated button to resume playback of the buffered video[cite: 7].
-    * [cite_start]**Forward & Rewind:** Skip forward or backward through the buffered video by a set number of frames[cite: 8, 9, 21, 23].
+* **Advanced Playback Controls**:
+    * **Live Stream:** Start the live camera feed or return to it from playback mode.
+    * **Pause:** A dual-function button to pause the live feed (entering playback mode) or pause the buffered playback itself.
+    * **Resume:** A dedicated button to resume playback of the buffered video.
+    * **Forward & Rewind:** Skip forward or backward through the buffered video by a set number of frames.
 * **Interactive Timeline:** A slider allows for precise seeking within the buffered video history when paused.
 * **Camera Configuration:**
-    * [cite_start]Change the camera's resolution on-the-fly from a dropdown menu with common options (e.g., 640x480, 1280x720, 1920x1080)[cite: 25, 26].
-    * [cite_start]The UI displays the current active resolution[cite: 27].
+    * Change the camera's resolution on-the-fly from a dropdown menu with common options (e.g., 640x480, 1280x720, 1920x1080).
+    * The UI displays the current active resolution.
 * **Professional User Interface:**
-    * A clean, minimal, and professional dark theme.
+    * A clean, minimal, and professional dark theme inspired by modern development tools.
     * Clear iconography and text labels on all buttons for maximum usability.
     * Helpful tooltips to explain the function of each control.
-* [cite_start]**Robust Error Handling:** The application gracefully handles potential runtime errors, such as the inability to access the camera or failure to set a resolution, and displays informative messages in the status bar without crashing[cite: 36, 37].
+* **Robust Error Handling:** The application gracefully handles potential runtime errors, such as the inability to access the camera or failure to set a resolution, and displays informative messages in the status bar without crashing.
+* **Automated Dependency Deployment:** The build system is configured to automatically copy all required Qt and OpenCV DLLs next to the executable, making the application portable and easy to run without manual setup.
 
 ## Tech Stack
 
 * **Language:** C++ (using the C++17 standard)
 * **UI Framework:** Qt 6
 * **Computer Vision:** OpenCV 4
-* [cite_start]**Build System:** CMake [cite: 11]
-* [cite_start]**Version Control:** Git / GitHub [cite: 11]
+* **Build System:** CMake
+* **Version Control:** Git / GitHub
 
 ## Prerequisites (Windows 11)
 
@@ -66,19 +67,13 @@ To build and run this project, you will need the following software installed:
     ```
 
 3.  **Compile the Project**
+    This command will compile the source code and automatically run the deployment scripts to copy all necessary DLLs into the build folder.
     ```powershell
     cmake --build build
     ```
 
 4.  **Run the Application**
-    Before running, you must add the Qt and OpenCV libraries to your terminal's PATH. Run these two commands in the same PowerShell session:
-
-    ```powershell
-    $env:PATH += ";C:\Qt\6.9.1\msvc2022_64\bin"
-    $env:PATH += ";C:\vcpkg\installed\x64-windows\bin"
-    ```
-
-    Now, launch the application:
+    Navigate to the `build/Debug` directory and run the executable directly. **No need to set the PATH variable.**
     ```powershell
     .\build\Debug\CameraApp.exe
     ```
