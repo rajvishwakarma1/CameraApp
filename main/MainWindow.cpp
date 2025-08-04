@@ -24,8 +24,7 @@ MainWindow::MainWindow(QWidget* parent)
 }
 
 void MainWindow::setupIconsAndTooltips() {
-    // Set icons to be larger and more prominent
-    const QSize iconSize(24, 24);
+    const QSize iconSize(16, 16);
     ui->playButton->setIconSize(iconSize);
     ui->pauseButton->setIconSize(iconSize);
     ui->resumeButton->setIconSize(iconSize);
@@ -45,61 +44,59 @@ void MainWindow::setupIconsAndTooltips() {
     ui->forwardButton->setToolTip("Skip forward 1 second in buffer");
 }
 
-// --- THIS IS THE NEW STYLESHEET INSPIRED BY THE WEBSITE ---
+// --- THIS IS THE NEW STYLESHEET USING YOUR BLUE/GRAY PALETTE ---
 void MainWindow::applyStylesheet() {
+    /*
+     * [cite_start]Color Palette Used: [cite: 36]
+     * #536B78 (Payne's gray)    - Backgrounds
+     * #FFFFFF (White)            - Main Text (for contrast)
+     * #637081 (Payne's gray)    - Subtle Borders / Disabled state
+     * #7C98B3 (Air superiority) - Buttons & Highlights
+    */
     QString style = R"(
-        QMainWindow {
-            background-color: #0a192f; /* Dark Navy Blue Background */
+        QMainWindow, QStatusBar {
+            background-color: #536B78; /* Payne's gray */
+            color: #FFFFFF;
         }
-        QStatusBar {
-            color: #8892b0; /* Light Slate Text */
-        }
-        /* Header and Footer Frames */
         #headerFrame, #footerFrame {
-            background-color: #112240; /* Lighter Navy */
-            border-top: 1px solid #00aaff; /* Highlight Blue Border */
+            background-color: #637081; /* Lighter Payne's gray */
         }
         #headerTitle {
             font-size: 18px;
             font-weight: bold;
-            color: #ccd6f6; /* Lightest Slate */
+            color: white;
             padding: 5px;
         }
-        #headerSubtitle, QLabel {
-            color: #8892b0; /* Light Slate Text */
+        QLabel {
+            color: white;
         }
-        /* Main Video Feed Label */
         #cameraFeedLabel {
             background-color: black;
-            color: #ccd6f6;
+            color: white;
             font-size: 20px;
         }
-        /* Control Buttons */
         QPushButton {
-            background-color: transparent;
-            color: #54f2d3; /* Mint Green/Cyan for icons */
-            border: 1px solid #54f2d3;
+            background-color: #7C98B3; /* Air superiority blue */
+            color: #FFFFFF;
+            border: none;
+            padding: 8px 16px;
             border-radius: 4px;
-            padding: 5px;
-            min-width: 40px;
-            min-height: 30px;
+            font-size: 14px;
         }
         QPushButton:hover {
-            background-color: rgba(84, 242, 211, 0.1);
+            background-color: #8FB0C8; /* Lighter version of the blue */
         }
         QPushButton:disabled {
-            border-color: #4a5b74;
-            color: #4a5b74;
+            background-color: #637081; /* Lighter Payne's gray */
+            color: #9099A2;
         }
-        /* Separator Line */
         Line {
-            background-color: #303C55;
+            background-color: #536B78;
         }
-        /* ComboBox for Resolution */
         QComboBox {
-            background-color: #0a192f;
-            color: #ccd6f6;
-            border: 1px solid #303C55;
+            background-color: #536B78;
+            color: white;
+            border: 1px solid #637081;
             padding: 5px;
             border-radius: 3px;
         }
@@ -107,21 +104,20 @@ void MainWindow::applyStylesheet() {
             border: none;
         }
         QComboBox QAbstractItemView {
-             background-color: #0a192f;
-             border: 1px solid #303C55;
-             selection-background-color: #303C55;
+             background-color: #536B78;
+             border: 1px solid #637081;
+             selection-background-color: #7C98B3;
         }
-        /* Timeline Slider */
         QSlider::groove:horizontal {
-            border: 1px solid #303C55;
+            border: 1px solid #637081;
             height: 6px;
-            background: #0a192f;
+            background: #536B78;
             margin: 2px 0;
             border-radius: 3px;
         }
         QSlider::handle:horizontal {
-            background: #54f2d3; /* Mint Green/Cyan */
-            border: 1px solid #54f2d3;
+            background: #7C98B3; /* Air superiority blue */
+            border: 1px solid #7C98B3;
             width: 16px;
             margin: -6px 0;
             border-radius: 8px;

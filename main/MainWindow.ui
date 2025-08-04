@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>VIR Innovations - VisionApp</string>
+   <string>VisionApp</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="mainLayout">
@@ -42,7 +42,7 @@
        <item>
         <widget class="QLabel" name="headerTitle">
          <property name="text">
-          <string>VisionApp Control Center</string>
+          <string>QT Webcam + Player</string>
          </property>
         </widget>
        </item>
@@ -58,13 +58,6 @@
           </size>
          </property>
         </spacer>
-       </item>
-       <item>
-        <widget class="QLabel" name="headerSubtitle">
-         <property name="text">
-          <string>Powered by VIR Innovations</string>
-         </property>
-        </widget>
        </item>
       </layout>
      </widget>
@@ -127,13 +120,25 @@
           <number>15</number>
          </property>
          <item>
-          <widget class="QPushButton" name="playButton"/>
+          <widget class="QPushButton" name="playButton">
+           <property name="text">
+            <string>Live Stream</string>
+           </property>
+          </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pauseButton"/>
+          <widget class="QPushButton" name="pauseButton">
+           <property name="text">
+            <string>Pause</string>
+           </property>
+          </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="resumeButton"/>
+          <widget class="QPushButton" name="resumeButton">
+           <property name="text">
+            <string>Resume</string>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="Line" name="separator1">
@@ -143,10 +148,18 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="rewindButton"/>
+          <widget class="QPushButton" name="rewindButton">
+           <property name="text">
+            <string>Rewind</string>
+           </property>
+          </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="forwardButton"/>
+          <widget class="QPushButton" name="forwardButton">
+           <property name="text">
+            <string>Forward</string>
+           </property>
+          </widget>
          </item>
          <item>
           <spacer name="horizontalSpacer_2">

@@ -34,7 +34,6 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *headerTitle;
     QSpacerItem *horizontalSpacer;
-    QLabel *headerSubtitle;
     QLabel *cameraFeedLabel;
     QFrame *footerFrame;
     QVBoxLayout *verticalLayout_2;
@@ -82,11 +81,6 @@ public:
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer);
-
-        headerSubtitle = new QLabel(headerFrame);
-        headerSubtitle->setObjectName("headerSubtitle");
-
-        horizontalLayout->addWidget(headerSubtitle);
 
 
         mainLayout->addWidget(headerFrame);
@@ -200,11 +194,15 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "VIR Innovations - VisionApp", nullptr));
-        headerTitle->setText(QCoreApplication::translate("MainWindow", "VisionApp Control Center", nullptr));
-        headerSubtitle->setText(QCoreApplication::translate("MainWindow", "Powered by VIR Innovations", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "VisionApp", nullptr));
+        headerTitle->setText(QCoreApplication::translate("MainWindow", "QT Webcam + Player", nullptr));
         cameraFeedLabel->setText(QCoreApplication::translate("MainWindow", "Press Live Stream to Begin", nullptr));
         timelineLabel->setText(QCoreApplication::translate("MainWindow", "Time: --", nullptr));
+        playButton->setText(QCoreApplication::translate("MainWindow", "Live Stream", nullptr));
+        pauseButton->setText(QCoreApplication::translate("MainWindow", "Pause", nullptr));
+        resumeButton->setText(QCoreApplication::translate("MainWindow", "Resume", nullptr));
+        rewindButton->setText(QCoreApplication::translate("MainWindow", "Rewind", nullptr));
+        forwardButton->setText(QCoreApplication::translate("MainWindow", "Forward", nullptr));
         resolutionLabel->setText(QCoreApplication::translate("MainWindow", "Resolution:", nullptr));
         currentResolutionLabel->setText(QCoreApplication::translate("MainWindow", "Current: N/A", nullptr));
     } // retranslateUi
