@@ -18,13 +18,10 @@
     <item>
      <widget class="QLabel" name="cameraFeedLabel">
       <property name="text">
-       <string>Camera is off. Press Play to start.</string>
+       <string>Camera is off. Press Live Stream to start.</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
-      </property>
-      <property name="styleSheet">
-       <string>background-color: black; color: white;</string>
       </property>
      </widget>
     </item>
@@ -63,28 +60,35 @@
          <item>
           <widget class="QPushButton" name="playButton">
            <property name="text">
-            <string>▶️ Play</string>
+            <string>Live Stream</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="pauseButton">
            <property name="text">
-            <string>⏸️ Pause</string>
+            <string>Pause</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="resumeButton">
+           <property name="text">
+            <string>Resume</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="rewindButton">
            <property name="text">
-            <string>⏪ Rewind</string>
+            <string>Rewind</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="forwardButton">
            <property name="text">
-            <string>⏩ Forward</string>
+            <string>Forward</string>
            </property>
           </widget>
          </item>

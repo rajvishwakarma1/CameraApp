@@ -38,6 +38,7 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QPushButton *playButton;
     QPushButton *pauseButton;
+    QPushButton *resumeButton;
     QPushButton *rewindButton;
     QPushButton *forwardButton;
     QGroupBox *groupBox_2;
@@ -95,6 +96,11 @@ public:
 
         horizontalLayout_2->addWidget(pauseButton);
 
+        resumeButton = new QPushButton(groupBox);
+        resumeButton->setObjectName("resumeButton");
+
+        horizontalLayout_2->addWidget(resumeButton);
+
         rewindButton = new QPushButton(groupBox);
         rewindButton->setObjectName("rewindButton");
 
@@ -146,14 +152,14 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Camera Feed App", nullptr));
-        cameraFeedLabel->setText(QCoreApplication::translate("MainWindow", "Camera is off. Press Play to start.", nullptr));
-        cameraFeedLabel->setStyleSheet(QCoreApplication::translate("MainWindow", "background-color: black; color: white;", nullptr));
+        cameraFeedLabel->setText(QCoreApplication::translate("MainWindow", "Camera is off. Press Live Stream to start.", nullptr));
         timelineLabel->setText(QCoreApplication::translate("MainWindow", "Time: --", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "Playback Controls", nullptr));
-        playButton->setText(QCoreApplication::translate("MainWindow", "\342\226\266\357\270\217 Play", nullptr));
-        pauseButton->setText(QCoreApplication::translate("MainWindow", "\342\217\270\357\270\217 Pause", nullptr));
-        rewindButton->setText(QCoreApplication::translate("MainWindow", "\342\217\252 Rewind", nullptr));
-        forwardButton->setText(QCoreApplication::translate("MainWindow", "\342\217\251 Forward", nullptr));
+        playButton->setText(QCoreApplication::translate("MainWindow", "Live Stream", nullptr));
+        pauseButton->setText(QCoreApplication::translate("MainWindow", "Pause", nullptr));
+        resumeButton->setText(QCoreApplication::translate("MainWindow", "Resume", nullptr));
+        rewindButton->setText(QCoreApplication::translate("MainWindow", "Rewind", nullptr));
+        forwardButton->setText(QCoreApplication::translate("MainWindow", "Forward", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "Camera Settings", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "Resolution:", nullptr));
         currentResolutionLabel->setText(QCoreApplication::translate("MainWindow", "Current: N/A", nullptr));
