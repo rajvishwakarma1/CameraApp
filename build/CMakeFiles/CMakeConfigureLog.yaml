@@ -113,7 +113,7 @@ events:
       The output was:
       0
       MSBuild version 17.14.18+a338add32 for .NET Framework
-      Build started 04-08-2025 19:58:44.
+      Build started 04-08-2025 21:49:03.
       
       Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\4.1.0-rc4\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -142,7 +142,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.81
+      Time Elapsed 00:00:00.53
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -3170,8 +3170,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-7d0qoc"
-      binary: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-7d0qoc"
+      source: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-ky3uah"
+      binary: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-ky3uah"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -3185,40 +3185,40 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-7d0qoc'
+        Change Dir: 'D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-ky3uah'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8a008.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_e7ce4.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.18+a338add32 for .NET Framework
-        Build started 04-08-2025 19:58:46.
+        Build started 04-08-2025 21:49:04.
         
-        Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7d0qoc\\cmTC_8a008.vcxproj" on node 1 (default targets).
+        Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ky3uah\\cmTC_e7ce4.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_8a008.dir\\Debug\\".
+          Creating directory "cmTC_e7ce4.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7d0qoc\\Debug\\".
-          Creating directory "cmTC_8a008.dir\\Debug\\cmTC_8a008.tlog\\".
+          Creating directory "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ky3uah\\Debug\\".
+          Creating directory "cmTC_e7ce4.dir\\Debug\\cmTC_e7ce4.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_8a008.dir\\Debug\\cmTC_8a008.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_8a008.dir\\Debug\\cmTC_8a008.tlog\\unsuccessfulbuild".
+          Creating "cmTC_e7ce4.dir\\Debug\\cmTC_e7ce4.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_e7ce4.dir\\Debug\\cmTC_e7ce4.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /Fo"cmTC_8a008.dir\\Debug\\\\" /Fd"cmTC_8a008.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /Fo"cmTC_e7ce4.dir\\Debug\\\\" /Fd"cmTC_e7ce4.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35213 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /Fo"cmTC_8a008.dir\\Debug\\\\" /Fd"cmTC_8a008.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /Fo"cmTC_e7ce4.dir\\Debug\\\\" /Fd"cmTC_e7ce4.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7d0qoc\\Debug\\cmTC_8a008.exe" /INCREMENTAL /ILK:"cmTC_8a008.dir\\Debug\\cmTC_8a008.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-7d0qoc/Debug/cmTC_8a008.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-7d0qoc/Debug/cmTC_8a008.lib" /MACHINE:X64  /machine:x64 cmTC_8a008.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_8a008.vcxproj -> D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7d0qoc\\Debug\\cmTC_8a008.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ky3uah\\Debug\\cmTC_e7ce4.exe" /INCREMENTAL /ILK:"cmTC_e7ce4.dir\\Debug\\cmTC_e7ce4.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-ky3uah/Debug/cmTC_e7ce4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-ky3uah/Debug/cmTC_e7ce4.lib" /MACHINE:X64  /machine:x64 cmTC_e7ce4.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_e7ce4.vcxproj -> D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ky3uah\\Debug\\cmTC_e7ce4.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_8a008.dir\\Debug\\cmTC_8a008.tlog\\unsuccessfulbuild".
-          Touching "cmTC_8a008.dir\\Debug\\cmTC_8a008.tlog\\cmTC_8a008.lastbuildstate".
-        Done Building Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-7d0qoc\\cmTC_8a008.vcxproj" (default targets).
+          Deleting file "cmTC_e7ce4.dir\\Debug\\cmTC_e7ce4.tlog\\unsuccessfulbuild".
+          Touching "cmTC_e7ce4.dir\\Debug\\cmTC_e7ce4.tlog\\cmTC_e7ce4.lastbuildstate".
+        Done Building Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ky3uah\\cmTC_e7ce4.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.55
+        Time Elapsed 00:00:00.58
         
       exitCode: 0
   -
@@ -3266,8 +3266,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-nughjv"
-      binary: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-nughjv"
+      source: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-qxqx6t"
+      binary: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-qxqx6t"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -3281,40 +3281,40 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-nughjv'
+        Change Dir: 'D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-qxqx6t'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_76ba2.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_d9568.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.18+a338add32 for .NET Framework
-        Build started 04-08-2025 19:58:47.
+        Build started 04-08-2025 21:49:05.
         
-        Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nughjv\\cmTC_76ba2.vcxproj" on node 1 (default targets).
+        Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qxqx6t\\cmTC_d9568.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_76ba2.dir\\Debug\\".
+          Creating directory "cmTC_d9568.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nughjv\\Debug\\".
-          Creating directory "cmTC_76ba2.dir\\Debug\\cmTC_76ba2.tlog\\".
+          Creating directory "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qxqx6t\\Debug\\".
+          Creating directory "cmTC_d9568.dir\\Debug\\cmTC_d9568.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_76ba2.dir\\Debug\\cmTC_76ba2.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_76ba2.dir\\Debug\\cmTC_76ba2.tlog\\unsuccessfulbuild".
+          Creating "cmTC_d9568.dir\\Debug\\cmTC_d9568.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_d9568.dir\\Debug\\cmTC_d9568.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /std:c++17 /Fo"cmTC_76ba2.dir\\Debug\\\\" /Fd"cmTC_76ba2.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nughjv\\src.cxx"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /std:c++17 /Fo"cmTC_d9568.dir\\Debug\\\\" /Fd"cmTC_d9568.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qxqx6t\\src.cxx"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35213 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /std:c++17 /Fo"cmTC_76ba2.dir\\Debug\\\\" /Fd"cmTC_76ba2.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nughjv\\src.cxx"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /std:c++17 /Fo"cmTC_d9568.dir\\Debug\\\\" /Fd"cmTC_d9568.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qxqx6t\\src.cxx"
           src.cxx
-        D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nughjv\\src.cxx(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nughjv\\cmTC_76ba2.vcxproj]
-        Done Building Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nughjv\\cmTC_76ba2.vcxproj" (default targets) -- FAILED.
+        D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qxqx6t\\src.cxx(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qxqx6t\\cmTC_d9568.vcxproj]
+        Done Building Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qxqx6t\\cmTC_d9568.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nughjv\\cmTC_76ba2.vcxproj" (default target) (1) ->
+        "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qxqx6t\\cmTC_d9568.vcxproj" (default target) (1) ->
         (ClCompile target) -> 
-          D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nughjv\\src.cxx(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nughjv\\cmTC_76ba2.vcxproj]
+          D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qxqx6t\\src.cxx(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-qxqx6t\\cmTC_d9568.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.33
+        Time Elapsed 00:00:00.35
         
       exitCode: 1
   -
@@ -3333,8 +3333,8 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-v52zjn"
-      binary: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-v52zjn"
+      source: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-u2s79c"
+      binary: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-u2s79c"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -3348,42 +3348,42 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-v52zjn'
+        Change Dir: 'D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-u2s79c'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_79699.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8b954.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.18+a338add32 for .NET Framework
-        Build started 04-08-2025 19:58:48.
+        Build started 04-08-2025 21:49:06.
         
-        Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v52zjn\\cmTC_79699.vcxproj" on node 1 (default targets).
+        Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u2s79c\\cmTC_8b954.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_79699.dir\\Debug\\".
+          Creating directory "cmTC_8b954.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v52zjn\\Debug\\".
-          Creating directory "cmTC_79699.dir\\Debug\\cmTC_79699.tlog\\".
+          Creating directory "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u2s79c\\Debug\\".
+          Creating directory "cmTC_8b954.dir\\Debug\\cmTC_8b954.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_79699.dir\\Debug\\cmTC_79699.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_79699.dir\\Debug\\cmTC_79699.tlog\\unsuccessfulbuild".
+          Creating "cmTC_8b954.dir\\Debug\\cmTC_8b954.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_8b954.dir\\Debug\\cmTC_8b954.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /std:c++17 /Fo"cmTC_79699.dir\\Debug\\\\" /Fd"cmTC_79699.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v52zjn\\CheckFunctionExists.cxx"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /std:c++17 /Fo"cmTC_8b954.dir\\Debug\\\\" /Fd"cmTC_8b954.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u2s79c\\CheckFunctionExists.cxx"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35213 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /std:c++17 /Fo"cmTC_79699.dir\\Debug\\\\" /Fd"cmTC_79699.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v52zjn\\CheckFunctionExists.cxx"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /std:c++17 /Fo"cmTC_8b954.dir\\Debug\\\\" /Fd"cmTC_8b954.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u2s79c\\CheckFunctionExists.cxx"
           CheckFunctionExists.cxx
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v52zjn\\Debug\\cmTC_79699.exe" /INCREMENTAL /ILK:"cmTC_79699.dir\\Debug\\cmTC_79699.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-v52zjn/Debug/cmTC_79699.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-v52zjn/Debug/cmTC_79699.lib" /MACHINE:X64  /machine:x64 cmTC_79699.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v52zjn\\cmTC_79699.vcxproj]
-        Done Building Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v52zjn\\cmTC_79699.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u2s79c\\Debug\\cmTC_8b954.exe" /INCREMENTAL /ILK:"cmTC_8b954.dir\\Debug\\cmTC_8b954.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-u2s79c/Debug/cmTC_8b954.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-u2s79c/Debug/cmTC_8b954.lib" /MACHINE:X64  /machine:x64 cmTC_8b954.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u2s79c\\cmTC_8b954.vcxproj]
+        Done Building Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u2s79c\\cmTC_8b954.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v52zjn\\cmTC_79699.vcxproj" (default target) (1) ->
+        "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u2s79c\\cmTC_8b954.vcxproj" (default target) (1) ->
         (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v52zjn\\cmTC_79699.vcxproj]
+          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-u2s79c\\cmTC_8b954.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.48
+        Time Elapsed 00:00:00.45
         
       exitCode: 1
   -
@@ -3402,8 +3402,8 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-vmoiwd"
-      binary: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-vmoiwd"
+      source: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-jch3ru"
+      binary: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-jch3ru"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -3417,42 +3417,42 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-vmoiwd'
+        Change Dir: 'D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-jch3ru'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6b450.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_f9e15.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.18+a338add32 for .NET Framework
-        Build started 04-08-2025 19:58:49.
+        Build started 04-08-2025 21:49:06.
         
-        Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmoiwd\\cmTC_6b450.vcxproj" on node 1 (default targets).
+        Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jch3ru\\cmTC_f9e15.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_6b450.dir\\Debug\\".
+          Creating directory "cmTC_f9e15.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmoiwd\\Debug\\".
-          Creating directory "cmTC_6b450.dir\\Debug\\cmTC_6b450.tlog\\".
+          Creating directory "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jch3ru\\Debug\\".
+          Creating directory "cmTC_f9e15.dir\\Debug\\cmTC_f9e15.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_6b450.dir\\Debug\\cmTC_6b450.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_6b450.dir\\Debug\\cmTC_6b450.tlog\\unsuccessfulbuild".
+          Creating "cmTC_f9e15.dir\\Debug\\cmTC_f9e15.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_f9e15.dir\\Debug\\cmTC_f9e15.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /std:c++17 /Fo"cmTC_6b450.dir\\Debug\\\\" /Fd"cmTC_6b450.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmoiwd\\CheckFunctionExists.cxx"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /std:c++17 /Fo"cmTC_f9e15.dir\\Debug\\\\" /Fd"cmTC_f9e15.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jch3ru\\CheckFunctionExists.cxx"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35213 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /std:c++17 /Fo"cmTC_6b450.dir\\Debug\\\\" /Fd"cmTC_6b450.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmoiwd\\CheckFunctionExists.cxx"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /std:c++17 /Fo"cmTC_f9e15.dir\\Debug\\\\" /Fd"cmTC_f9e15.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jch3ru\\CheckFunctionExists.cxx"
           CheckFunctionExists.cxx
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmoiwd\\Debug\\cmTC_6b450.exe" /INCREMENTAL /ILK:"cmTC_6b450.dir\\Debug\\cmTC_6b450.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-vmoiwd/Debug/cmTC_6b450.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-vmoiwd/Debug/cmTC_6b450.lib" /MACHINE:X64  /machine:x64 cmTC_6b450.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmoiwd\\cmTC_6b450.vcxproj]
-        Done Building Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmoiwd\\cmTC_6b450.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jch3ru\\Debug\\cmTC_f9e15.exe" /INCREMENTAL /ILK:"cmTC_f9e15.dir\\Debug\\cmTC_f9e15.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-jch3ru/Debug/cmTC_f9e15.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-jch3ru/Debug/cmTC_f9e15.lib" /MACHINE:X64  /machine:x64 cmTC_f9e15.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jch3ru\\cmTC_f9e15.vcxproj]
+        Done Building Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jch3ru\\cmTC_f9e15.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmoiwd\\cmTC_6b450.vcxproj" (default target) (1) ->
+        "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jch3ru\\cmTC_f9e15.vcxproj" (default target) (1) ->
         (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-vmoiwd\\cmTC_6b450.vcxproj]
+          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jch3ru\\cmTC_f9e15.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.43
+        Time Elapsed 00:00:00.46
         
       exitCode: 1
   -
@@ -3990,8 +3990,8 @@ events:
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-5jjx56"
-      binary: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-5jjx56"
+      source: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-50q1jp"
+      binary: "D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-50q1jp"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -4005,40 +4005,40 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: 'D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-5jjx56'
+        Change Dir: 'D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-50q1jp'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8b9ba.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_f3992.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.14.18+a338add32 for .NET Framework
-        Build started 04-08-2025 19:58:50.
+        Build started 04-08-2025 21:49:07.
         
-        Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5jjx56\\cmTC_8b9ba.vcxproj" on node 1 (default targets).
+        Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-50q1jp\\cmTC_f3992.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_8b9ba.dir\\Debug\\".
+          Creating directory "cmTC_f3992.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5jjx56\\Debug\\".
-          Creating directory "cmTC_8b9ba.dir\\Debug\\cmTC_8b9ba.tlog\\".
+          Creating directory "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-50q1jp\\Debug\\".
+          Creating directory "cmTC_f3992.dir\\Debug\\cmTC_f3992.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_8b9ba.dir\\Debug\\cmTC_8b9ba.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_8b9ba.dir\\Debug\\cmTC_8b9ba.tlog\\unsuccessfulbuild".
+          Creating "cmTC_f3992.dir\\Debug\\cmTC_f3992.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_f3992.dir\\Debug\\cmTC_f3992.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /std:c++17 /Fo"cmTC_8b9ba.dir\\Debug\\\\" /Fd"cmTC_8b9ba.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5jjx56\\src.cxx"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /std:c++17 /Fo"cmTC_f3992.dir\\Debug\\\\" /Fd"cmTC_f3992.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-50q1jp\\src.cxx"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35213 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /std:c++17 /Fo"cmTC_8b9ba.dir\\Debug\\\\" /Fd"cmTC_8b9ba.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5jjx56\\src.cxx"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /GR /std:c++17 /Fo"cmTC_f3992.dir\\Debug\\\\" /Fd"cmTC_f3992.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-50q1jp\\src.cxx"
           src.cxx
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5jjx56\\Debug\\cmTC_8b9ba.exe" /INCREMENTAL /ILK:"cmTC_8b9ba.dir\\Debug\\cmTC_8b9ba.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-5jjx56/Debug/cmTC_8b9ba.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-5jjx56/Debug/cmTC_8b9ba.lib" /MACHINE:X64  /machine:x64 cmTC_8b9ba.dir\\Debug\\src.obj
-          cmTC_8b9ba.vcxproj -> D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5jjx56\\Debug\\cmTC_8b9ba.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-50q1jp\\Debug\\cmTC_f3992.exe" /INCREMENTAL /ILK:"cmTC_f3992.dir\\Debug\\cmTC_f3992.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-50q1jp/Debug/cmTC_f3992.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"D:/dev/CameraApp/build/CMakeFiles/CMakeScratch/TryCompile-50q1jp/Debug/cmTC_f3992.lib" /MACHINE:X64  /machine:x64 cmTC_f3992.dir\\Debug\\src.obj
+          cmTC_f3992.vcxproj -> D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-50q1jp\\Debug\\cmTC_f3992.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_8b9ba.dir\\Debug\\cmTC_8b9ba.tlog\\unsuccessfulbuild".
-          Touching "cmTC_8b9ba.dir\\Debug\\cmTC_8b9ba.tlog\\cmTC_8b9ba.lastbuildstate".
-        Done Building Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5jjx56\\cmTC_8b9ba.vcxproj" (default targets).
+          Deleting file "cmTC_f3992.dir\\Debug\\cmTC_f3992.tlog\\unsuccessfulbuild".
+          Touching "cmTC_f3992.dir\\Debug\\cmTC_f3992.tlog\\cmTC_f3992.lastbuildstate".
+        Done Building Project "D:\\dev\\CameraApp\\build\\CMakeFiles\\CMakeScratch\\TryCompile-50q1jp\\cmTC_f3992.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.59
+        Time Elapsed 00:00:00.56
         
       exitCode: 0
   -

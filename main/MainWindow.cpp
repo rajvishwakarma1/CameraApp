@@ -44,59 +44,65 @@ void MainWindow::setupIconsAndTooltips() {
     ui->forwardButton->setToolTip("Skip forward 1 second in buffer");
 }
 
-// --- THIS IS THE NEW STYLESHEET USING YOUR BLUE/GRAY PALETTE ---
+// --- THIS IS THE NEW MINIMAL AND PROFESSIONAL STYLESHEET ---
 void MainWindow::applyStylesheet() {
     /*
-     * [cite_start]Color Palette Used: [cite: 36]
-     * #536B78 (Payne's gray)    - Backgrounds
-     * #FFFFFF (White)            - Main Text (for contrast)
-     * #637081 (Payne's gray)    - Subtle Borders / Disabled state
-     * #7C98B3 (Air superiority) - Buttons & Highlights
+     * Color Palette Used:
+     * #252526 - Dark Gray (almost black) for main background
+     * #2D2D30 - Lighter Gray for panels/frames
+     * #3E3E42 - Medium Gray for components
+     * #CCCCCC - Light Gray for text
+     * #007ACC - Professional Blue for accents (on hover/selection)
     */
     QString style = R"(
-        QMainWindow, QStatusBar {
-            background-color: #536B78; /* Payne's gray */
-            color: #FFFFFF;
+        QMainWindow {
+            background-color: #252526;
+        }
+        QStatusBar {
+            color: #CCCCCC;
         }
         #headerFrame, #footerFrame {
-            background-color: #637081; /* Lighter Payne's gray */
+            background-color: #2D2D30;
         }
         #headerTitle {
             font-size: 18px;
             font-weight: bold;
-            color: white;
+            color: #FFFFFF;
             padding: 5px;
         }
         QLabel {
-            color: white;
+            color: #CCCCCC;
         }
         #cameraFeedLabel {
             background-color: black;
-            color: white;
+            color: #CCCCCC;
             font-size: 20px;
         }
         QPushButton {
-            background-color: #7C98B3; /* Air superiority blue */
-            color: #FFFFFF;
-            border: none;
+            background-color: #3E3E42;
+            color: #CCCCCC;
+            border: 1px solid #444444;
             padding: 8px 16px;
             border-radius: 4px;
             font-size: 14px;
         }
         QPushButton:hover {
-            background-color: #8FB0C8; /* Lighter version of the blue */
+            background-color: #007ACC;
+            border-color: #007ACC;
+            color: #FFFFFF;
         }
         QPushButton:disabled {
-            background-color: #637081; /* Lighter Payne's gray */
-            color: #9099A2;
+            background-color: #2D2D30;
+            color: #666666;
+            border-color: #333333;
         }
         Line {
-            background-color: #536B78;
+            background-color: #444444;
         }
         QComboBox {
-            background-color: #536B78;
-            color: white;
-            border: 1px solid #637081;
+            background-color: #3E3E42;
+            color: #CCCCCC;
+            border: 1px solid #444444;
             padding: 5px;
             border-radius: 3px;
         }
@@ -104,23 +110,27 @@ void MainWindow::applyStylesheet() {
             border: none;
         }
         QComboBox QAbstractItemView {
-             background-color: #536B78;
-             border: 1px solid #637081;
-             selection-background-color: #7C98B3;
+             background-color: #252526;
+             border: 1px solid #444444;
+             selection-background-color: #007ACC;
         }
         QSlider::groove:horizontal {
-            border: 1px solid #637081;
-            height: 6px;
-            background: #536B78;
+            border: 1px solid #3E3E42;
+            height: 4px;
+            background: #3E3E42;
             margin: 2px 0;
-            border-radius: 3px;
+            border-radius: 2px;
         }
         QSlider::handle:horizontal {
-            background: #7C98B3; /* Air superiority blue */
-            border: 1px solid #7C98B3;
+            background: #CCCCCC;
+            border: 1px solid #CCCCCC;
             width: 16px;
-            margin: -6px 0;
+            margin: -7px 0;
             border-radius: 8px;
+        }
+        QSlider::handle:horizontal:hover {
+            background: #007ACC;
+            border: 1px solid #007ACC;
         }
     )";
     this->setStyleSheet(style);

@@ -34,6 +34,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QLabel *headerTitle;
     QSpacerItem *horizontalSpacer;
+    QLabel *assignmentCreditLabel;
     QLabel *cameraFeedLabel;
     QFrame *footerFrame;
     QVBoxLayout *verticalLayout_2;
@@ -81,6 +82,12 @@ public:
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer);
+
+        assignmentCreditLabel = new QLabel(headerFrame);
+        assignmentCreditLabel->setObjectName("assignmentCreditLabel");
+        assignmentCreditLabel->setAlignment(Qt::AlignRight|Qt::AlignVCenter);
+
+        horizontalLayout->addWidget(assignmentCreditLabel);
 
 
         mainLayout->addWidget(headerFrame);
@@ -194,8 +201,9 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "VisionApp", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "QT Webcam + Player", nullptr));
         headerTitle->setText(QCoreApplication::translate("MainWindow", "QT Webcam + Player", nullptr));
+        assignmentCreditLabel->setText(QCoreApplication::translate("MainWindow", "Assignment for Vir Innovations by Raj Vishwakarma", nullptr));
         cameraFeedLabel->setText(QCoreApplication::translate("MainWindow", "Press Live Stream to Begin", nullptr));
         timelineLabel->setText(QCoreApplication::translate("MainWindow", "Time: --", nullptr));
         playButton->setText(QCoreApplication::translate("MainWindow", "Live Stream", nullptr));

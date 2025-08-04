@@ -14,10 +14,10 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
 # --- Find Dependencies ---
-# Find the Qt6 package, specifically the Widgets component [cite: 53]
+# Find the Qt6 package, specifically the Widgets component
 find_package(Qt6 REQUIRED COMPONENTS Widgets)
 
-# Find the OpenCV package [cite: 53]
+# Find the OpenCV package
 find_package(OpenCV REQUIRED)
 
 # --- Define Executable ---
@@ -41,3 +41,23 @@ target_link_libraries(CameraApp PRIVATE
 install(TARGETS CameraApp
     RUNTIME DESTINATION bin
 )
+
+# --- Automatic DLL Deployment (Windows Only) ---
+# This block will automatically copy the required Qt DLLs.
+# vcpkg will handle the OpenCV DLLs automatically.
+if(WIN32)
+    # Find the windeployqt executable, which is the standard Qt tool for this job.
+    find_program(WINDEPLOYQT_EXECUTABLE windeployqt HINTS "${Qt6_DIR}/bin")
+
+    if(WINDEPLOYQT_EXECUTABLE)
+        # Add a command that runs AFTER the build is complete.
+        # This command calls windeployqt on our executable.
+        add_custom_command(
+            TARGET CameraApp POST_BUILD
+            COMMAND ${WINDEPLOYQT_EXECUTABLE}
+            # Arguments for windeployqt: deploy into the folder where the .exe is
+            ARGS --dir "$<TARGET_FILE_DIR:CameraApp>" "$<TARGET_FILE:CameraApp>"
+            COMMENT "Running windeployqt to automatically deploy Qt DLLs"
+        )
+    endif()
+endif()
