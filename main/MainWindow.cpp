@@ -5,119 +5,195 @@ MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
-    // Initialize the timer but don't start it yet
+    // Timer for live feed
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &MainWindow::updateFrame);
 
-    // Populate the resolution dropdown [cite: 28]
+    // --- New: Setup the playback timer ---
+    playbackTimer = new QTimer(this);
+    connect(playbackTimer, &QTimer::timeout, this, &MainWindow::advancePlayback);
+
+    // Populate the resolution dropdown
     ui->resolutionComboBox->addItem("640x480", QSize(640, 480));
     ui->resolutionComboBox->addItem("1280x720", QSize(1280, 720));
     ui->resolutionComboBox->addItem("1920x1080", QSize(1920, 1080));
 
-    // Disable controls that shouldn't be used until the camera is on
+    // Initial state of controls
     ui->pauseButton->setEnabled(false);
     ui->resolutionComboBox->setEnabled(false);
+    setPlaybackControlsEnabled(false);
 
-    // As per requirements, Forward/Rewind buttons exist but are nonsensical for a live feed.
-    // They are disabled to reflect this. [cite: 8, 9, 21, 23]
-    ui->forwardButton->setEnabled(false);
-    ui->rewindButton->setEnabled(false);
     statusBar()->showMessage("Ready. Press Play to begin.");
 }
 
 MainWindow::~MainWindow() {
-    // Release resources
     if (cap.isOpened()) {
         cap.release();
     }
     delete ui;
 }
 
-// Play button starts or resumes the camera feed [cite: 18]
+void MainWindow::setPlaybackControlsEnabled(bool enabled) {
+    ui->rewindButton->setEnabled(enabled);
+    ui->forwardButton->setEnabled(enabled);
+    ui->timelineSlider->setEnabled(enabled);
+}
+
+// --- Modified: on_playButton_clicked now cleanly exits any playback mode ---
 void MainWindow::on_playButton_clicked() {
+    // Stop any playback that might be happening
+    if (playbackTimer->isActive()) {
+        playbackTimer->stop();
+    }
+
+    isPlaybackPaused = false;
+    frameBuffer.clear();
+    setPlaybackControlsEnabled(false);
+    ui->pauseButton->setText("⏸️ Pause"); // Ensure button text is correct
+
     if (!cap.isOpened()) {
         initializeCamera();
     }
+
     if (cap.isOpened()) {
-        // The resume functionality is handled here too [cite: 20]
-        timer->start(30); // Update roughly 33 times per second
+        on_resolutionComboBox_currentIndexChanged(ui->resolutionComboBox->currentIndex());
+        timer->start(1000 / frameRate);
         ui->playButton->setEnabled(false);
         ui->pauseButton->setEnabled(true);
         ui->resolutionComboBox->setEnabled(true);
+        ui->timelineLabel->setText("Time: Live");
         statusBar()->showMessage("Camera feed is live.");
     }
 }
 
-// Pause button freezes the current frame [cite: 19]
+// --- Modified: on_pauseButton_clicked now has a dual role ---
 void MainWindow::on_pauseButton_clicked() {
-    timer->stop();
-    ui->playButton->setEnabled(true); // Re-enable play to act as resume
-    ui->playButton->setText("▶️ Resume");
-    ui->pauseButton->setEnabled(false);
-    statusBar()->showMessage("Feed paused.");
+    // Case 1: We are in the live feed, so pause it.
+    if (!isPlaybackPaused) {
+        timer->stop();
+        isPlaybackPaused = true;
+        ui->playButton->setEnabled(true);
+        ui->pauseButton->setText("▶️ Resume Playback"); // Change text for new role
+
+        if (!frameBuffer.empty()) {
+            setPlaybackControlsEnabled(true);
+            ui->timelineSlider->setRange(0, frameBuffer.size() - 1);
+            ui->timelineSlider->setValue(frameBuffer.size() - 1);
+            updatePlaybackFrame(frameBuffer.size() - 1);
+        }
+        statusBar()->showMessage("Feed paused. Use timeline or resume playback.");
+    }
+    // Case 2: We are already paused, so toggle playback of the buffer.
+    else {
+        if (playbackTimer->isActive()) {
+            playbackTimer->stop();
+            ui->pauseButton->setText("▶️ Resume Playback");
+        }
+        else {
+            // Don't start if we are at the very end of the timeline
+            if (ui->timelineSlider->value() >= ui->timelineSlider->maximum()) {
+                return;
+            }
+            playbackTimer->start(1000 / frameRate);
+            ui->pauseButton->setText("⏸️ Pause");
+        }
+    }
+}
+
+// Rewind button skips back 1 second
+void MainWindow::on_rewindButton_clicked() {
+    playbackTimer->stop();
+    ui->pauseButton->setText("▶️ Resume Playback");
+    ui->timelineSlider->setValue(ui->timelineSlider->value() - frameRate);
+}
+
+// Forward button skips forward 1 second
+void MainWindow::on_forwardButton_clicked() {
+    playbackTimer->stop();
+    ui->pauseButton->setText("▶️ Resume Playback");
+    ui->timelineSlider->setValue(ui->timelineSlider->value() + frameRate);
 }
 
 
 void MainWindow::initializeCamera() {
-    // Open the default camera (ID 0)
     cap.open(0);
-
-    // Error Handling: Check if camera was successfully opened [cite: 36, 59]
     if (!cap.isOpened()) {
         QMessageBox::critical(this, "Camera Error", "Unable to access the camera!");
-        return;
     }
-    // Set initial resolution from the dropdown
-    on_resolutionComboBox_currentIndexChanged(ui->resolutionComboBox->currentIndex());
 }
 
-
-// Main loop to capture and display frames [cite: 16]
 void MainWindow::updateFrame() {
-    cv::Mat frame;
-    cap >> frame; // Capture a new frame
+    if (!isPlaybackPaused) {
+        cv::Mat frame;
+        cap >> frame;
+        if (frame.empty()) {
+            statusBar()->showMessage("Error: Could not grab frame from camera.");
+            return;
+        }
+        frameBuffer.push_back(frame);
+        if (frameBuffer.size() > bufferSize) {
+            frameBuffer.erase(frameBuffer.begin());
+        }
+        updatePlaybackFrame(frameBuffer.size() - 1);
+    }
+}
 
-    if (frame.empty()) {
-        // Handle error if frame is empty
-        statusBar()->showMessage("Error: Could not grab frame.");
+// --- New: This function moves the timeline slider forward during playback ---
+void MainWindow::advancePlayback() {
+    int currentValue = ui->timelineSlider->value();
+    if (currentValue < ui->timelineSlider->maximum()) {
+        ui->timelineSlider->setValue(currentValue + 1);
+    }
+    else {
+        playbackTimer->stop();
+        ui->pauseButton->setText("▶️ Resume Playback");
+    }
+}
+
+void MainWindow::on_timelineSlider_valueChanged(int value) {
+    updatePlaybackFrame(value);
+}
+
+void MainWindow::updatePlaybackFrame(int frameIndex) {
+    if (frameIndex < 0 || frameIndex >= frameBuffer.size()) {
         return;
     }
-
-    // Convert the OpenCV frame (BGR) to a QImage (RGB)
+    cv::Mat frame = frameBuffer[frameIndex].clone();
     cv::cvtColor(frame, frame, cv::COLOR_BGR2RGB);
     QImage qimg(frame.data, frame.cols, frame.rows, frame.step, QImage::Format_RGB888);
-
-    // Display the QImage in the QLabel, scaling it to fit the label's size
     ui->cameraFeedLabel->setPixmap(QPixmap::fromImage(qimg).scaled(
         ui->cameraFeedLabel->size(), Qt::KeepAspectRatio, Qt::SmoothTransformation));
+
+    if (isPlaybackPaused) {
+        float timeOffset = -1.0f * (frameBuffer.size() - 1 - frameIndex) / frameRate;
+        ui->timelineLabel->setText(QString("Time: %1s").arg(timeOffset, 0, 'f', 1));
+    }
+    else {
+        ui->timelineLabel->setText("Time: Live");
+    }
 }
 
-// Slot to handle resolution changes [cite: 25]
 void MainWindow::on_resolutionComboBox_currentIndexChanged(int index) {
-    if (index < 0) return;
-
+    if (index < 0 || !timer->isActive() || isPlaybackPaused) return;
     QSize resolution = ui->resolutionComboBox->itemData(index).toSize();
     setCameraResolution(resolution.width(), resolution.height());
 }
 
 void MainWindow::setCameraResolution(int width, int height) {
-    if (cap.isOpened()) {
-        cap.set(cv::CAP_PROP_FRAME_WIDTH, width);
-        cap.set(cv::CAP_PROP_FRAME_HEIGHT, height);
+    if (timer->isActive()) {
+        timer->stop();
     }
-
-    // Update the label to show current resolution [cite: 27]
+    cap.release();
+    cap.open(0);
+    if (!cap.isOpened()) {
+        QMessageBox::critical(this, "Camera Error", "Unable to re-open the camera after resolution change.");
+        return;
+    }
+    cap.set(cv::CAP_PROP_FRAME_WIDTH, width);
+    cap.set(cv::CAP_PROP_FRAME_HEIGHT, height);
     QString resText = QString("Current: %1x%2")
         .arg(cap.get(cv::CAP_PROP_FRAME_WIDTH))
         .arg(cap.get(cv::CAP_PROP_FRAME_HEIGHT));
     ui->currentResolutionLabel->setText(resText);
-}
-
-// Forward/Rewind buttons are not applicable for a live feed. [cite: 41]
-void MainWindow::on_forwardButton_clicked() {
-    statusBar()->showMessage("Forward is not applicable for a live stream.");
-}
-
-void MainWindow::on_rewindButton_clicked() {
-    statusBar()->showMessage("Rewind is not applicable for a live stream.");
+    timer->start(1000 / frameRate);
 }

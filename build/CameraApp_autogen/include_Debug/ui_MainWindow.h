@@ -17,6 +17,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -29,6 +30,9 @@ public:
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout;
     QLabel *cameraFeedLabel;
+    QHBoxLayout *horizontalLayout_4;
+    QLabel *timelineLabel;
+    QSlider *timelineSlider;
     QHBoxLayout *horizontalLayout;
     QGroupBox *groupBox;
     QHBoxLayout *horizontalLayout_2;
@@ -57,6 +61,23 @@ public:
         cameraFeedLabel->setAlignment(Qt::AlignCenter);
 
         verticalLayout->addWidget(cameraFeedLabel);
+
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName("horizontalLayout_4");
+        timelineLabel = new QLabel(centralwidget);
+        timelineLabel->setObjectName("timelineLabel");
+        timelineLabel->setMinimumSize(QSize(80, 0));
+
+        horizontalLayout_4->addWidget(timelineLabel);
+
+        timelineSlider = new QSlider(centralwidget);
+        timelineSlider->setObjectName("timelineSlider");
+        timelineSlider->setOrientation(Qt::Horizontal);
+
+        horizontalLayout_4->addWidget(timelineSlider);
+
+
+        verticalLayout->addLayout(horizontalLayout_4);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName("horizontalLayout");
@@ -127,6 +148,7 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Camera Feed App", nullptr));
         cameraFeedLabel->setText(QCoreApplication::translate("MainWindow", "Camera is off. Press Play to start.", nullptr));
         cameraFeedLabel->setStyleSheet(QCoreApplication::translate("MainWindow", "background-color: black; color: white;", nullptr));
+        timelineLabel->setText(QCoreApplication::translate("MainWindow", "Time: --", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "Playback Controls", nullptr));
         playButton->setText(QCoreApplication::translate("MainWindow", "\342\226\266\357\270\217 Play", nullptr));
         pauseButton->setText(QCoreApplication::translate("MainWindow", "\342\217\270\357\270\217 Pause", nullptr));
