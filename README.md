@@ -5,7 +5,7 @@ A professional, feature-rich webcam viewer and player application built with C++
 ## Demo
 
 Application Screenshot ⬇️
-[!Final Application UI](src/demoss.png)
+![Final Application UI](src/demoss.png)
 
 Live Youtube Demo ⬇️
 
