@@ -41,6 +41,46 @@ This application includes a wide range of features to meet and exceed the projec
 * **Build System:** CMake
 * **Version Control:** Git / GitHub
 
+## Project Requirements
+
+This project was built to fulfill the specifications outlined in the assignment document. Below are the key requirements and how they were met.
+
+### Functional Requirements
+
+> **1. Camera Feed Display:** The application should display the live camera feed in a resizable window. The feed should be captured using the OpenCV library.
+
+* ✅ **Met:** The application uses `cv::VideoCapture` to capture the feed and displays it in the main window, which is fully resizable.
+
+> **2. Playback Controls:** The application must include the following controls: Play, Pause, Resume, Forward, Rewind.
+
+* ✅ **Met:** All five controls are implemented. Play (Live Stream), Pause, and Resume manage the state of the live feed and buffered playback. Forward and Rewind operate on the buffered timeline.
+
+> **3. Camera Feed Settings:** The user should be able to configure the resolution of the camera feed. Options may include common resolutions such as 640x480, 1280x720, and 1920x1080. The application should display the current resolution being used.
+
+* ✅ **Met:** A dropdown menu allows users to select from these resolutions. The "Current" label updates to reflect the actual resolution set by the camera driver.
+
+> **4. Error Handling:** The application should handle errors such as the inability to access the camera or invalid resolution settings. If an error occurs, the application should notify the user with a message.
+
+* ✅ **Met:** The application shows a `QMessageBox` pop-up if the camera cannot be accessed. It shows messages in the status bar for non-critical errors like failing to grab a frame, and the resolution-changing logic is robust against driver failures.
+
+### Deliverables
+
+> **1. A GitHub repository with the source code...**
+
+* ✅ **Met:** This repository contains the full source code.
+
+> **2. A CMake-based build system to compile the project.**
+
+* ✅ **Met:** The project uses a `CMakeLists.txt` file that configures the project and handles all dependencies.
+
+> **3. A README file that explains how to set up, build, and run the application.**
+
+* ✅ **Met:** This document serves as the README file.
+
+> **4. A simple UI with the necessary playback controls... and a section for camera feed settings...**
+
+* ✅ **Met:** The final UI includes all specified controls and settings in a clean, professional layout.
+
 ## Setup & Installation (Windows 11)
 
 Follow these steps to set up the development environment and all necessary dependencies.
@@ -52,7 +92,7 @@ Follow these steps to set up the development environment and all necessary depen
     * During installation, you **must** select the **"Desktop development with C++"** workload.
 
 * **Git for Windows:**
-    * Download and install from the [git-scm.com](https://git-scm.com/download/win).
+    * Download and install from [git-scm.com](https://git-scm.com/download/win).
     * You can use the default settings during installation.
 
 * **CMake:**
@@ -87,8 +127,8 @@ Follow these steps to set up the development environment and all necessary depen
 
 1.  **Clone the Repository**
     ```bash
-    git clone <your-repo-url>
-    cd <repo-name>
+    git clone [https://github.com/rajvishwakarma1/CameraApp](https://github.com/rajvishwakarma1/CameraApp)
+    cd CameraApp
     ```
 
 2.  **Configure with CMake**
