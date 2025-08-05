@@ -9,7 +9,7 @@ A professional, feature-rich webcam viewer and player application built with C++
 A live demo of the application can be viewed on YouTube.
 *(Note: You will need to upload your video to YouTube and replace `YOUTUBE_ID_HERE` with your video's ID)*
 
-[![YouTube Demo](https://img.youtube.com/vi/YOUTUBE_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_ID_HERE)
+[![YouTube Demo](https://img.youtube.com/vi/Xmc5whRvbkQ/0.jpg)](https://www.youtube.com/watch?v=Xmc5whRvbkQ)
 
 ## Features
 
