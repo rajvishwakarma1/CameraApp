@@ -116,12 +116,8 @@ While the current version fulfills all requirements, the following features coul
 
 * **Save/Record Video to File:** The feature we discussed but decided to leave for later. This would involve using OpenCV's `VideoWriter` class, likely in a separate thread to prevent UI lag.
 * **Multiple Camera Support:** Add a feature to detect all connected cameras and allow the user to switch between them.
-* **Real-time OpenCV Filters:** Implement a menu to apply real-time video effects, such as Grayscale, Edge Detection (Canny), or Blurring.
+* **Real-time OpenCV Filters:** Implement a menu to apply real-time video effects, such as Grayscale or Blurring.
 * **Saving Snapshots:** Add a button to capture the current frame and save it as a JPEG or PNG image.
-
-## Author
-
-* **Raj Vishwakarma**
 
 ### Acknowledgments
 
