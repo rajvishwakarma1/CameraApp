@@ -1,13 +1,13 @@
-# QT Webcam + Player
+﻿# QT Webcam + Player
 
 A professional, feature-rich webcam viewer and player application built with C++ and the Qt framework, developed as an assignment for VIR Innovations. The application provides a live camera feed, buffered playback controls, and a modern, minimal user interface.
 
 ## Demo
 
+Application Screenshot ⬇️
 ![Final Application UI](src/demoss.png)
 
-A live demo of the application can be viewed on YouTube.
-*(Note: You will need to upload your video to YouTube and replace `YOUTUBE_ID_HERE` with your video's ID)*
+Live Youtube Demo ⬇️
 
 [![YouTube Demo](https://img.youtube.com/vi/Xmc5whRvbkQ/0.jpg)](https://www.youtube.com/watch?v=Xmc5whRvbkQ)
 
