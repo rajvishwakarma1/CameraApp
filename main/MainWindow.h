@@ -36,7 +36,7 @@ private:
     void setPlaybackControlsEnabled(bool enabled);
     void applyStylesheet();
     void setupIconsAndTooltips();
-    void updateButtonStates(); // New helper for managing UI state
+    void updateButtonStates();
 
     Ui::MainWindow* ui;
     cv::VideoCapture cap;
@@ -49,4 +49,4 @@ private:
     int frameRate = 30;
 };
 
-#endif // MAINWINDOW_H
+#endif 
