@@ -41,15 +41,47 @@ This application includes a wide range of features to meet and exceed the projec
 * **Build System:** CMake
 * **Version Control:** Git / GitHub
 
-## Prerequisites (Windows 11)
+## Setup & Installation (Windows 11)
 
-To build and run this project, you will need the following software installed:
+Follow these steps to set up the development environment and all necessary dependencies.
 
-* **Visual Studio 2022:** With the "Desktop development with C++" workload.
-* **Git for Windows**
-* **CMake**
-* **Qt 6 (MSVC Version):** Installed via the Qt Online Installer.
-* **vcpkg:** With OpenCV installed via the command: `vcpkg install opencv4:x64-windows`.
+### 1. Install Core Tools
+
+* **Visual Studio 2022:**
+    * Download the Community version from the [official Visual Studio website](https://visualstudio.microsoft.com/vs/community/).
+    * During installation, you **must** select the **"Desktop development with C++"** workload.
+
+* **Git for Windows:**
+    * Download and install from the [git-scm.com](https://git-scm.com/download/win).
+    * You can use the default settings during installation.
+
+* **CMake:**
+    * Download the latest installer from the [official CMake website](https://cmake.org/download/).
+    * During installation, ensure you select the option **"Add CMake to the system PATH for all users"**.
+
+### 2. Install Dependencies (vcpkg & Qt)
+
+* **vcpkg (for OpenCV):**
+    1.  Open PowerShell and choose a directory to install `vcpkg` (e.g., `C:\`).
+    2.  Clone the repository:
+        ```powershell
+        git clone [https://github.com/microsoft/vcpkg](https://github.com/microsoft/vcpkg)
+        cd vcpkg
+        ```
+    3.  Run the bootstrap script:
+        ```powershell
+        .\bootstrap-vcpkg.bat
+        ```
+    4.  Install the 64-bit OpenCV library. This may take some time.
+        ```powershell
+        .\vcpkg.exe install opencv4:x64-windows
+        ```
+
+* **Qt 6 (MSVC Version):**
+    1.  Download and run the [Qt Online Installer](https://www.qt.io/download-qt-installer).
+    2.  Sign in or create a Qt account.
+    3.  On the "Installation options" screen, select **"Custom Installation"**.
+    4.  On the "Customize" screen, find the latest Qt version (e.g., Qt 6.9.1) and check the box for the **"MSVC 2022 64-bit"** component. This is critical to match your Visual Studio installation.
 
 ## How to Build and Run
 
@@ -92,4 +124,5 @@ While the current version fulfills all requirements, the following features coul
 * **Raj Vishwakarma**
 
 ### Acknowledgments
+
 * An assignment for **VIR Innovations**.
