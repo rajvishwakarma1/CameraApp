@@ -44,7 +44,6 @@ void MainWindow::setupIconsAndTooltips() {
     ui->forwardButton->setToolTip("Skip forward 1 second in buffer");
 }
 
-// --- THIS IS THE NEW MINIMAL AND PROFESSIONAL STYLESHEET ---
 void MainWindow::applyStylesheet() {
     /*
      * Color Palette Used:
@@ -135,8 +134,6 @@ void MainWindow::applyStylesheet() {
     )";
     this->setStyleSheet(style);
 }
-
-// --- ALL LOGIC BELOW THIS LINE REMAINS UNCHANGED ---
 
 MainWindow::~MainWindow() {
     if (cap.isOpened()) cap.release();

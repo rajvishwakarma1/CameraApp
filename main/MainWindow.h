@@ -22,7 +22,7 @@ private slots:
     void updateFrame();
     void on_playButton_clicked();
     void on_pauseButton_clicked();
-    void on_resumeButton_clicked(); // New slot for the resume button
+    void on_resumeButton_clicked(); 
     void on_forwardButton_clicked();
     void on_rewindButton_clicked();
     void on_timelineSlider_valueChanged(int value);
