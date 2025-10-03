@@ -1,6 +1,6 @@
 ﻿# QT Webcam + Player
 
-A professional, feature-rich webcam viewer and player application built with C++ and the Qt framework, developed as an assignment for VIR Innovations. The application provides a live camera feed, buffered playback controls, and a modern, minimal user interface.
+A professional, feature-rich webcam viewer and player application built with C++ and the Qt framework. The application provides a live camera feed, buffered playback controls, and a modern, minimal user interface.
 
 ## Demo
 
@@ -118,7 +118,3 @@ While the current version fulfills all requirements, the following features coul
 * **Multiple Camera Support:** Add a feature to detect all connected cameras and allow the user to switch between them.
 * **Real-time OpenCV Filters:** Implement a menu to apply real-time video effects, such as Grayscale or Blurring.
 * **Saving Snapshots:** Add a button to capture the current frame and save it as a JPEG or PNG image.
-
-### Acknowledgments
-
-* An assignment for **VIR Innovations**.
